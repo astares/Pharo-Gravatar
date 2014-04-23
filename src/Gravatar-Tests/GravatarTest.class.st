@@ -1,0 +1,38 @@
+Class {
+	#name : #GravatarTest,
+	#superclass : #TestCase,
+	#category : #'Gravatar-Tests-Utilities'
+}
+
+{ #category : #accessing }
+GravatarTest >> defaultTestClass [
+
+	^Gravatar 
+]
+
+{ #category : #tests }
+GravatarTest >> testHashingMailaddress [
+
+	|hashed|
+	hashed := (self defaultTestClass hash: 'example@mail.com').
+	self assert: hashed = 'fbf2b9cfc0a472389f3620e471bdf0e9' 
+]
+
+{ #category : #tests }
+GravatarTest >> testImageURL [
+
+	|url|
+	url := self defaultTestClass imageURLFor: 'example@mail.com'.
+	self assert:  url = 'http://www.gravatar.com/avatar/fbf2b9cfc0a472389f3620e471bdf0e9.jpg' .
+]
+
+{ #category : #tests }
+GravatarTest >> testImageURLWithSize [
+
+	|url|
+	url := self defaultTestClass imageURLFor: 'example@mail.com' size: 16.
+	self assert:  url = 'http://www.gravatar.com/avatar/fbf2b9cfc0a472389f3620e471bdf0e9.jpg?s=16'.
+	
+	url := self defaultTestClass imageURLFor: 'example@mail.com' size: 32.
+	self assert:  url = 'http://www.gravatar.com/avatar/fbf2b9cfc0a472389f3620e471bdf0e9.jpg?s=32' .
+]
