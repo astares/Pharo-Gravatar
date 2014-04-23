@@ -1,3 +1,67 @@
+"
+# Gravatar
+
+## Project info
+
+The ""Gravatar"" project is a simple wrapper for the [Gravatar API][1] allowing you to get small avatar images for a given registered email address. You can easily access and use it in [Pharo][2]. 
+
+### Project location
+The project is located on STHub at [http://smalltalkhub.com/#!/~TorstenBergmann/Gravatar][3]
+
+### License
+The Gravatar project for Pharo is under MIT License.
+
+## Installation
+
+To install just open the Pharo configuration browser and load ""Gravatar"" from there. 
+
+Alternatively to install the packages manually into your Pharo image just evaluate:
+
+    Gofer new
+        url: 'http://smalltalkhub.com/mc/TorstenBergmann/Gravatar/main';
+        package: 'ConfigurationOfGravatar';
+        load.
+    ((Smalltalk at: #ConfigurationOfGravatar) project stableVersion) load.
+
+## Use in your own application
+### Retrieving the image URL
+
+Usually you display a Gravatar image within a web application. If you generate the HTML you will add an URL for the  image. To get one you can use:
+
+    Gravatar imageURLFor: 'example@mail.com'
+    
+If you require a different size just evaluate:
+
+    Gravatar imageURLFor: 'example@mail.com' size: 32.
+
+### Retrieving and displaying an image
+
+If you need the real image you can use Pharos Zinc components suite to get the image form over HTTP and open it on your Pharo desk:
+
+    |form|
+	form := ZnEasy getJpeg: (self imageURLFor: 'example@mail.com').
+	form asMorph openInWorld
+
+
+### Internals
+
+Gravatar is based on MD5 hashing an email address. To get the hashing just evaluate:
+
+    Gravatar hash: 'example@mail.com' 
+
+
+# Packages
+
+- Gravatar-Core - package with the core, contains anything you need in an own app
+- Gravatar-Tests - package with the SUnit tests
+
+# Testing
+The package comes with unit tests tests in the package ***Gravatar-Tests***. Just use the SUnit TestRunner to run them.
+
+  [1]: https://en.gravatar.com/site/implement/
+  [2]: http://www.pharo.org
+  [3]: http://smalltalkhub.com/#!/~TorstenBergmann/Gravatar
+"
 Class {
 	#name : #ConfigurationOfGravatar,
 	#superclass : #Object,
