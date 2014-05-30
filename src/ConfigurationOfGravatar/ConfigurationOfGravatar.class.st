@@ -237,7 +237,7 @@ ConfigurationOfGravatar >> version010: spec [
 		spec author: 'TorstenBergmann'.
 		spec timestamp: '4/23/2014 13:08'.
 		spec 
-			package: #'Gravatar-Core' with: 'Gravatar-Core-TorstenBergmann.1';
-			package: #'Gravatar-Tests' with: 'Gravatar-Tests-TorstenBergmann.1'. ].
+			package: #'Gravatar-Core' with: 'Gravatar-Core-BiardMathias.7';
+			package: #'Gravatar-Tests' with: 'Gravatar-Tests-BiardMathias.2'. ].
 
 ]
