@@ -27,6 +27,22 @@ GravatarTest >> testImageURL [
 ]
 
 { #category : #tests }
+GravatarTest >> testImageURLWithRetroDefault [
+
+	|url|
+	url := self defaultTestClass imageURLWithRetroDefaultFor:  'example@mail.com'.
+	self assert:  url = 'http://www.gravatar.com/avatar/fbf2b9cfc0a472389f3620e471bdf0e9.jpg?d=retro' .
+]
+
+{ #category : #tests }
+GravatarTest >> testImageURLWithRetroDefaultAndSize [
+
+	|url|
+	url := self defaultTestClass imageURLWithRetroDefaultFor:  'example@mail.com' size: 42.
+	self assert:  url equals: 'http://www.gravatar.com/avatar/fbf2b9cfc0a472389f3620e471bdf0e9.jpg?d=retro&s=42' .
+]
+
+{ #category : #tests }
 GravatarTest >> testImageURLWithSize [
 
 	|url|
