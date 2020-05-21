@@ -30,7 +30,7 @@ If you need the real image you can use Pharos Zinc components suite to get the i
 
 ```Smalltalk
 |form|
-form := ZnEasy getJpeg: (self imageURLFor: 'example@mail.com').
+form := ZnEasy getJpeg: (Gravatar imageURLFor: 'example@mail.com').
 form asMorph openInWorld
 ```
 
