@@ -10,6 +10,11 @@ Metacello new
     load
 ```
 
+## Screnshot
+
+### Windows
+![alt text](doc/gravatar.png "Screenshot")
+
 ## Use in your own application
 
 ### Retrieving the image URL
