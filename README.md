@@ -5,7 +5,7 @@ A simple Pharo wrapper for the Gravatar API
 
 ```Smalltalk
 Metacello new 
-    repository: 'github://astares/Gravatar/src';
+    repository: 'github://astares/Pharo-Gravatar/src';
     baseline: 'Gravatar';
     load
 ```
