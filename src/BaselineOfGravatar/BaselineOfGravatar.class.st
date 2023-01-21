@@ -1,5 +1,7 @@
 "
-Baseline for https://github.com/astares/Pharo-Gravatar
+A simple Pharo wrapper for the Gravatar API
+
+See [https://github.com/astares/Pharo-Gravatar](https://github.com/astares/Pharo-Gravatar)
 "
 Class {
 	#name : #BaselineOfGravatar,
@@ -21,6 +23,7 @@ BaselineOfGravatar >> baseline: spec [
 			spec	
 				group: 'Core' with: #('Gravatar-Core');
 				group: 'Tests' with: #('Gravatar-Core-Tests');
+				group: 'CI' with: #('Tests');
 				group: 'all' with: #('Core' 'Tests');
 				group: 'default' with: #('Core' 'Tests') ]
 ]
