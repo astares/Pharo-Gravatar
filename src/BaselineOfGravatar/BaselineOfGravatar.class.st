@@ -9,18 +9,18 @@ Class {
 	#category : #BaselineOfGravatar
 }
 
-{ #category : #baseline }
+{ #category : #baselines }
 BaselineOfGravatar >> baseline: spec [
 	<baseline>
 	spec
 		for: #common do: [
 			"Packages"
-			spec 
+			spec
 				package: 'Gravatar-Core';
 				package: 'Gravatar-Core-Tests' with: [ spec requires: #('Gravatar-Core') ].
-			
-			"Groups"	
-			spec	
+
+			"Groups"
+			spec
 				group: 'Core' with: #('Gravatar-Core');
 				group: 'Tests' with: #('Gravatar-Core-Tests');
 				group: 'CI' with: #('Tests');
